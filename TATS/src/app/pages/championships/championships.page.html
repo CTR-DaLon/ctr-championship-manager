@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>championships</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+<ion-list>
+    <ion-item *ngFor="let championship of (championships | async)" [routerLink]="['/championship', championship.id]">
+        {{ championship.name }}
+    </ion-item>
+</ion-list>
+
+
+</ion-content>

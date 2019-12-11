@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/championships"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Championship Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input [(ngModel)]="championship.name"></ion-input>
+    </ion-item>
+
+    
+    <ion-item>
+        <ion-label position="stacked">Image</ion-label>
+    </ion-item>
+</ion-content>
