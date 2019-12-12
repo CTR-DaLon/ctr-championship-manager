@@ -12,7 +12,8 @@ import { toastController } from '@ionic/core';
 export class MyChampionshipPage implements OnInit {
 
     championship: Championship = {
-        name: ''
+        name: '',
+        cups: []
     }
     constructor(private activatedRoute: ActivatedRoute, private championshipService: ChampionshipsService,
         private toastCtrl: ToastController, private router: Router) { }

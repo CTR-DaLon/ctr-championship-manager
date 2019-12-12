@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { AngularFirestoreCollection, AngularFirestore, DocumentReference } from '@angular/fire/firestore';
+import { Cup, CupsService } from './cups-service.service';
 
 export interface Championship {
     id?: string,
-    name: string
+    name: string,
+    cups: string[],
 }
 
 @Injectable({
@@ -16,7 +18,7 @@ export class ChampionshipsService {
     private championships: Observable<Championship[]>;
     private championshipCollection: AngularFirestoreCollection<Championship>;
 
-    constructor(private afs: AngularFirestore) {
+    constructor(private afs: AngularFirestore, private cupsService: CupsService) {
         this.championshipCollection = this.afs.collection<Championship>('championships');
         this.championships = this.championshipCollection.snapshotChanges().pipe(
             map(actions => {
@@ -49,7 +51,8 @@ export class ChampionshipsService {
 
     updateChampionship(championship: Championship): Promise<void> {
         return this.championshipCollection.doc(championship.id).update({
-            name: championship.name
+            name: championship.name,
+            cups: championship.cups
         });
     }
 
