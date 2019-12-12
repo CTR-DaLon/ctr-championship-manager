@@ -5,8 +5,7 @@ import { AngularFirestoreCollection, AngularFirestore, DocumentReference } from 
 
 export interface Championship {
     id?: string,
-    name: string,
-    img: string
+    name: string
 }
 
 @Injectable({
@@ -50,8 +49,7 @@ export class ChampionshipsService {
 
     updateChampionship(championship: Championship): Promise<void> {
         return this.championshipCollection.doc(championship.id).update({
-            name: championship.name,
-            img: championship.img
+            name: championship.name
         });
     }
 

@@ -1,18 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>championships</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary" text-center>
+        <ion-buttons slot="start">
+            <ion-menu-button autoHide="false"></ion-menu-button>
+
+        </ion-buttons>    
+        <ion-title>TATS</ion-title>
+        <ion-title size="small">Mes Championnats</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button [routerLink]="['/championship']">
+        <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
-
-
-<ion-list>
-    <ion-item *ngFor="let championship of (championships | async)" [routerLink]="['/championship', championship.id]">
-        {{ championship.name }}
-    </ion-item>
-</ion-list>
-
-
+    <ion-list>
+        <ion-item *ngFor="let championship of (championships | async)" [routerLink]="['/championship', championship.id]">
+            {{ championship.name }}
+        </ion-item>
+    </ion-list>
 </ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/championships"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Championship Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input [(ngModel)]="championship.name"></ion-input>
+    </ion-item>
+</ion-content>
+
+
+<ion-footer *ngIf="!championship.id">
+    <ion-toolbar>
+        <ion-button (click)="addChampionship()" fill="solid" expand="full" color="success">
+            Ajouter le championnat
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>
+
+<ion-footer *ngIf="championship.id">
+    <ion-row no-padding text-center>
+        <ion-col size="6">
+            <ion-button (click)="deleteChampionship()" fill="outline" expand="block" color="danger">
+                Supprimer
+            </ion-button>
+        </ion-col>
+        <ion-col size="6">
+            <ion-button (click)="updateChampionship()" fill="solid" expand="block" color="success">
+                Update
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer>
