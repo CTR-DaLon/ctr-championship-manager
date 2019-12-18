@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'championships', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'championships',
+    path: 'home',
     loadChildren: () => import('./pages/championships/championships.module').then( m => m.ChampionshipsPageModule)
   },
   {
-    path: 'championship/:id',
-    loadChildren: () => import('./pages/my-championship/my-championship.module').then( m => m.MyChampionshipPageModule)
+    path: 'championship',
+    loadChildren: () => import('./pages/championship/my-championship.module').then( m => m.MyChampionshipPageModule)
   },
   {
-    path: 'championship',
-    loadChildren: () => import('./pages/add-championship/add-championship.module').then( m => m.AddChampionshipPageModule)
+    path: 'championship/:id',
+    loadChildren: () => import('./pages/championship/my-championship.module').then( m => m.MyChampionshipPageModule)
   },
 ];
 
