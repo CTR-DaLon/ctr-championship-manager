@@ -7,7 +7,7 @@ import { Cup, CupsService } from './cups-service.service';
 export interface Championship {
     id?: string,
     name: string,
-    cups: string[],
+    img: string
 }
 
 @Injectable({
@@ -52,7 +52,7 @@ export class ChampionshipsService {
     updateChampionship(championship: Championship): Promise<void> {
         return this.championshipCollection.doc(championship.id).update({
             name: championship.name,
-            cups: championship.cups
+            img: championship.img
         });
     }
 

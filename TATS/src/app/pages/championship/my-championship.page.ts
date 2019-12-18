@@ -13,7 +13,7 @@ export class MyChampionshipPage implements OnInit {
 
     championship: Championship = {
         name: '',
-        cups: []
+        img: ''
     }
     constructor(private activatedRoute: ActivatedRoute, private championshipService: ChampionshipsService,
         private toastCtrl: ToastController, private router: Router) { }

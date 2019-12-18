@@ -5,14 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCILHQawlOMuXryRHKs_jzYUFQ9lMxSOOY",
-    authDomain: "ctr-championship-manager.firebaseapp.com",
-    databaseURL: "https://ctr-championship-manager.firebaseio.com",
-    projectId: "ctr-championship-manager",
-    storageBucket: "ctr-championship-manager.appspot.com",
-    messagingSenderId: "590697879032",
-    appId: "1:590697879032:web:4fa775d3daeb253bf3320d",
-    measurementId: "G-5JXRJY1M10"
+    apiKey: "AIzaSyAiAQSiY6BsjHjckTCCQZH5WoozWIi8kJU",
+    authDomain: "tats-fdfd2.firebaseapp.com",
+    databaseURL: "https://tats-fdfd2.firebaseio.com",
+    projectId: "tats-fdfd2",
+    storageBucket: "tats-fdfd2.appspot.com",
+    messagingSenderId: "388527895062",
+    appId: "1:388527895062:web:66f0aac1820431c407fb37"
   }
 };
 
