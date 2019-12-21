@@ -3,3 +3,8 @@ vscode:
     - HookyQR.beautify@1.5.0:mXo/OcopUVNHHxCPZWwlxQ==
     - fivethree.vscode-ionic-snippets@1.9.0:ytwvJ6Qwmv4GjI9Z6jow6Q==
     - johnpapa.Angular2@8.2.0:71cwhvciDfgwVNiG3yCydw==
+    - johnpapa.angular-essentials@0.6.3:kn6MdE8GXp3Nplq14ISQWg==
+tasks:
+  - command: npm i -g ionic
+  - command: cd TATS
+  - command: ionic serve
