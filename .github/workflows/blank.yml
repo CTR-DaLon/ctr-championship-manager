@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Go in work directory
+      run: cd TATS
+    - name: Install and test
+      run: |
+        npm install
+        npm i -g ionic
+        npm run build
+        npm run test
