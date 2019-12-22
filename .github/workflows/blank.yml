@@ -9,11 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Go in work directory
-      run: cd TATS
     - name: Install and test
       run: |
-        npm install
+        cd TATS
         npm i -g ionic
+        npm install
         npm run build
         npm run test
