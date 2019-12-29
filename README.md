@@ -10,7 +10,7 @@
 -  Clone du projet puis : 
     ```npm install -g ionic```
 
-- Puis, dans le dossier TATS : 
+- Puis : 
     ```ionic serve```
 	
 	Le hot reload rafraichit l'appli à chaque sauvegarde d'un fichier dans les sources

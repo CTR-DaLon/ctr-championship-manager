@@ -15,19 +15,13 @@ jobs:
         node-version: 12.8
     - name: Install dependencies
       run: npm install
-      working-directory: ./TATS
     - name: Install ionic
       run: npm i ionic
-      working-directory: ./TATS
     - name: Lint
       run: npm run lint
-      working-directory: ./TATS
     - name: Build
       run: npm run build -- --prod
-      working-directory: ./TATS
     - name: Test
       run: npm test -- --configuration=ci
-      working-directory: ./TATS
     - name: E2E
       run: npm run e2e -- --configuration=ci
-      working-directory: ./TATS

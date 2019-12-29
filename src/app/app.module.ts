@@ -17,9 +17,13 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule],
+    AngularFirestoreModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
