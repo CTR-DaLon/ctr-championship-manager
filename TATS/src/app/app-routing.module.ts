@@ -15,6 +15,18 @@ const routes: Routes = [
     path: 'championship/:id',
     loadChildren: () => import('./pages/championship/my-championship.module').then( m => m.MyChampionshipPageModule)
   },
+  {
+    path: 'cups-list',
+    loadChildren: () => import('./pages/cups/cups-list/cups-list.module').then( m => m.CupsListPageModule)
+  },
+  {
+    path: 'cup-details',
+    loadChildren: () => import('./pages/cups/cup-details/cup-details.module').then( m => m.CupDetailsPageModule)
+  },
+  {
+    path: 'cup-details/:id',
+    loadChildren: () => import('./pages/cups/cup-details/cup-details.module').then( m => m.CupDetailsPageModule)
+  },
 ];
 
 @NgModule({

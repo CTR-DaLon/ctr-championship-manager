@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { AngularFirestoreCollection, AngularFirestore, DocumentReference } from '@angular/fire/firestore';
-import { Cup, CupsService } from './cups-service.service';
+import { Cup, CupsService } from './cups.service'
 
 export interface Championship {
     id?: string,
@@ -13,7 +13,6 @@ export interface Championship {
 @Injectable({
   providedIn: 'root'
 })
-
 export class ChampionshipsService {
     private championships: Observable<Championship[]>;
     private championshipCollection: AngularFirestoreCollection<Championship>;

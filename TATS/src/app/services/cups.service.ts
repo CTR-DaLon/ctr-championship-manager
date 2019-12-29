@@ -5,7 +5,8 @@ import { map, take } from 'rxjs/operators';
 
 export interface Cup {
     id?: string,
-    name: string
+    name: string,
+    img: string
 }
 
 @Injectable({
@@ -37,7 +38,7 @@ export class CupsService {
         return this.cupCollection.doc<Cup>(id).valueChanges().pipe(
             take(1),
             map(cup => {
-                cup.id;
+                cup.id = id;
                 return cup;
             })
         );
@@ -49,7 +50,8 @@ export class CupsService {
 
     updateCup(cup: Cup): Promise<void> {
         return this.cupCollection.doc(cup.id).update({
-            name: cup.name
+            name: cup.name,
+            img: cup.img
         });
     }
 
