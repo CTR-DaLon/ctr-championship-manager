@@ -1,55 +1,54 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button autoHide="false"></ion-menu-button>
-        </ion-buttons>
-        <ion-title>TATS</ion-title>
-        <ion-title *ngIf="!championship.id" size="small">Créer un championnat</ion-title>
-        <ion-title *ngIf="championship.id" size="small">Consulter un championnat</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TATS</ion-title>
+    <ion-title *ngIf="!championship.id" size="small">Créer un championnat</ion-title>
+    <ion-title *ngIf="championship.id" size="small">Consulter un championnat</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-item>
-        <ion-label position="stacked">Nom du championnat :</ion-label>
-        <ion-input [(ngModel)]="championship.name"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Nom du championnat :</ion-label>
+    <ion-input [(ngModel)]="championship.name"></ion-input>
+  </ion-item>
 
-    <ion-item>
-        <ion-label position="stacked">Url de l'image :</ion-label>
-        <ion-input [(ngModel)]="championship.img"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Url de l'image :</ion-label>
+    <ion-input [(ngModel)]="championship.img"></ion-input>
+  </ion-item>
 
-    <ion-item>
-        <ion-label>Liste des coupes :</ion-label>
-        <ion-list>
-            <ion-item *ngFor="let cup of (cups | async)">
-                <ion-label>cup.name</ion-label>
-            </ion-item>   
-        </ion-list>
-    </ion-item>
+  <ion-item>
+    <ion-label>Liste des coupes :</ion-label>
+    <ion-list>
+      <ion-item *ngFor="let cup of (cups | async)">
+        <ion-label>cup.name</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-item>
 </ion-content>
 
-
 <ion-footer *ngIf="!championship.id">
-    <ion-toolbar>
-        <ion-button (click)="addChampionship()" fill="solid" expand="full" color="success">
-            Ajouter le championnat
-        </ion-button>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-button (click)="addChampionship()" fill="solid" expand="full" color="success">
+      Ajouter le championnat
+    </ion-button>
+  </ion-toolbar>
 </ion-footer>
 
 <ion-footer *ngIf="championship.id">
-    <ion-row class="ion-no-padding ion-text-center">
-        <ion-col size="6">
-            <ion-button (click)="deleteChampionship()" fill="outline" expand="block" color="danger">
-                Supprimer
-            </ion-button>
-        </ion-col>
-        <ion-col size="6">
-            <ion-button (click)="updateChampionship()" fill="solid" expand="block" color="success">
-                Update
-            </ion-button>
-        </ion-col>
-    </ion-row>
+  <ion-row class="ion-no-padding ion-text-center">
+    <ion-col size="6">
+      <ion-button (click)="deleteChampionship()" fill="outline" expand="block" color="danger">
+        Supprimer
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button (click)="updateChampionship()" fill="solid" expand="block" color="success">
+        Update
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-footer>

@@ -6,58 +6,78 @@ import { ToastService } from 'src/app/services/toast.service';
 @Component({
   selector: 'app-cup-details',
   templateUrl: './cup-details.page.html',
-  styleUrls: ['./cup-details.page.scss'],
+  styleUrls: ['./cup-details.page.scss']
 })
 export class CupDetailsPage implements OnInit {
+  cup: Cup = {
+    name: '',
+    img: ''
+  };
 
-    cup: Cup = {
-        name: '',
-        img: ''
-    }
-
-  constructor(private activatedRoute: ActivatedRoute, private cupService: CupsService, private router: Router,
-    private toastService: ToastService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cupService: CupsService,
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit() {
-      let id = this.activatedRoute.snapshot.paramMap.get('id');
-      if (id) {
-          this.cupService.getCup(id).subscribe((cup: Cup) => {
-              this.cup = cup
-          })
-      }
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.cupService.getCup(id).subscribe((cup: Cup) => {
+        this.cup = cup;
+      });
+    }
   }
 
   add() {
-      this.cupService.addCup(this.cup).then(() => {
+    this.cupService
+      .addCup(this.cup)
+      .then(
+        () => {
           this.toastService.showToast('Coupe créée');
           this.router.navigateByUrl('/cups-list');
-      }, error => {
+        },
+        error => {
           console.log('Error add cup', error);
-      }).catch(error => {
-          console.log('Error add cup', error);
+        }
+      )
+      .catch(error => {
+        console.log('Error add cup', error);
       });
   }
 
   update() {
-      this.cupService.updateCup(this.cup).then(() => {
+    this.cupService
+      .updateCup(this.cup)
+      .then(
+        () => {
           this.toastService.showToast('Coupe mise à jour');
           this.router.navigateByUrl('/cups-list');
-      }, error => {
+        },
+        error => {
           console.log('Error update cup', error);
-      }).catch(error => {
-          console.log('Error update cup', error);
+        }
+      )
+      .catch(error => {
+        console.log('Error update cup', error);
       });
   }
 
   delete() {
-      this.cupService.deleteCup(this.cup.id).then(() => {
+    this.cupService
+      .deleteCup(this.cup.id)
+      .then(
+        () => {
           this.toastService.showToast('Coupe supprimée');
           this.router.navigateByUrl('/cups-list');
-      }, error => {
+        },
+        error => {
           console.log('Error delete cup', error);
-      }).catch(error => {
-          console.log('Error delete cup', error);
+        }
+      )
+      .catch(error => {
+        console.log('Error delete cup', error);
       });
   }
-
 }

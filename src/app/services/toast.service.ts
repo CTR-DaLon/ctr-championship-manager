@@ -5,16 +5,16 @@ import { ToastController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class ToastService {
+  private toastDuration = 2000;
 
-    private toastDuration: number = 2000;
+  constructor(private toastController: ToastController) {}
 
-  constructor(private toastController: ToastController) { }
-
-    showToast(msg) {
-        this.toastController.create({
-            message: msg,
-            duration: this.toastDuration
-        }).then(toast => toast.present());
-    }
-
+  showToast(msg) {
+    this.toastController
+      .create({
+        message: msg,
+        duration: this.toastDuration
+      })
+      .then(toast => toast.present());
+  }
 }

@@ -6,5 +6,5 @@ vscode:
     - johnpapa.angular-essentials@0.6.3:kn6MdE8GXp3Nplq14ISQWg==
     - esbenp.prettier-vscode@3.17.0:dkmQZhBq1JK+eQr3dU7I5g==
 tasks:
-  - init: npm i -g ionic && cd TATS/ && npm i
+  - init: npm i -g ionic prettier && npm i
     command: ionic serve

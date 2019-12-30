@@ -1,40 +1,37 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button autoHide="false"></ion-menu-button>
-        </ion-buttons>
-        <ion-title>TATS</ion-title>
-        <ion-title size="small">Mes Championnats</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TATS</ion-title>
+    <ion-title size="small">Mes Championnats</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <!-- fab placed to the top end -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button [routerLink]="['/championship']">
-        <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+  <!-- fab placed to the top end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/championship']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
+  <ion-list>
     <ion-list>
-        <ion-list>
-            <ion-item-sliding *ngFor="let championship of (championships | async)" [routerLink]="['/championship', championship.id]">
-                
-
-
-
-
-                <ion-card>
-                    <ion-card-header>
-                        <ion-card-subtitle>Catégorie</ion-card-subtitle>
-                        <ion-card-title>{{ championship.name }}</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <ion-img [src]="championship.img">  </ion-img>
-                    </ion-card-content>
-                </ion-card>
-                
-            </ion-item-sliding>
-        </ion-list>
+      <ion-item-sliding
+        *ngFor="let championship of (championships | async)"
+        [routerLink]="['/championship', championship.id]"
+      >
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Catégorie</ion-card-subtitle>
+            <ion-card-title>{{ championship.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="championship.img"> </ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-item-sliding>
     </ion-list>
+  </ion-list>
 </ion-content>

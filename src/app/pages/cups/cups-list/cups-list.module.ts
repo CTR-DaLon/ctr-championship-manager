@@ -9,12 +9,7 @@ import { CupsListPageRoutingModule } from './cups-list-routing.module';
 import { CupsListPage } from './cups-list.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    CupsListPageRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, CupsListPageRoutingModule],
   declarations: [CupsListPage]
 })
 export class CupsListPageModule {}

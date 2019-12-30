@@ -1,33 +1,33 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button autoHide="false"></ion-menu-button>
-        </ion-buttons>
-        <ion-title>TATS</ion-title>
-        <ion-title size="small">Les Coupes</ion-title>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TATS</ion-title>
+    <ion-title size="small">Les Coupes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <!-- fab placed to the top end -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button [routerLink]="['/cup-details']">
-        <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+  <!-- fab placed to the top end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/cup-details']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
+  <ion-list>
     <ion-list>
-        <ion-list>
-            <ion-item-sliding *ngFor="let cup of (cups | async)" [routerLink]="['/cup-details', cup.id]">
-                <ion-card>
-                    <ion-card-header>
-                        <ion-card-title>{{ cup.name }}</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                        <ion-img [src]="cup.img">  </ion-img>
-                    </ion-card-content>
-                </ion-card>
-            </ion-item-sliding>
-        </ion-list>
+      <ion-item-sliding *ngFor="let cup of (cups | async)" [routerLink]="['/cup-details', cup.id]">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ cup.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img [src]="cup.img"> </ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-item-sliding>
     </ion-list>
+  </ion-list>
 </ion-content>

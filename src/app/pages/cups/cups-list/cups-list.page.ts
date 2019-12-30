@@ -5,16 +5,14 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-cups-list',
   templateUrl: './cups-list.page.html',
-  styleUrls: ['./cups-list.page.scss'],
+  styleUrls: ['./cups-list.page.scss']
 })
 export class CupsListPage implements OnInit {
+  cups: Observable<Cup[]>;
 
-    cups: Observable<Cup[]>;
-
-  constructor(private cupService: CupsService) { }
+  constructor(private cupService: CupsService) {}
 
   ngOnInit() {
-      this.cups = this.cupService.getCups();
+    this.cups = this.cupService.getCups();
   }
-
 }

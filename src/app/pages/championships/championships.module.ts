@@ -9,12 +9,7 @@ import { ChampionshipsPageRoutingModule } from './championships-routing.module';
 import { ChampionshipsPage } from './championships.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ChampionshipsPageRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, IonicModule, ChampionshipsPageRoutingModule],
   declarations: [ChampionshipsPage]
 })
 export class ChampionshipsPageModule {}
