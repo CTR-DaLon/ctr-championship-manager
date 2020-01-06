@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cup, CupsService } from 'src/app/services/cups.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { TracksService, Track } from 'src/app/services/tracks.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cup-details',
@@ -14,9 +16,12 @@ export class CupDetailsPage implements OnInit {
     img: ''
   };
 
+  tracks: Observable<Track[]>;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private cupService: CupsService,
+    private trackService: TracksService,
     private router: Router,
     private toastService: ToastService
   ) {}
@@ -28,6 +33,7 @@ export class CupDetailsPage implements OnInit {
         this.cup = cup;
       });
     }
+    this.tracks = this.trackService.getTracks();
   }
 
   add() {

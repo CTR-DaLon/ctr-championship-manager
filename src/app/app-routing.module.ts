@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'cup-details/:id',
     loadChildren: () =>
       import('./pages/cups/cup-details/cup-details.module').then(m => m.CupDetailsPageModule)
+  },
+  {
+    path: 'cup-generator',
+    loadChildren: () => import('./pages/cups/cup-generator/cup-generator.module').then( m => m.CupGeneratorPageModule)
   }
 ];
 
