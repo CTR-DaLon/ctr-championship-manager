@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TATS</ion-title>
+    <ion-title size="small">Générateur de rencontre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Nombre de coupes</ion-label>
+        <ion-input type="number" placeholder="5" [(ngModel)]="cupsToGenerate"></ion-input>
+    </ion-item>
+    <ion-list *ngIf="cupsToDo">
+        <ion-list-header>
+            <ion-label>Coupes</ion-label>
+        </ion-list-header>
+        <ion-item-sliding *ngFor="let cupToDo of cupsToDo">
+            <ion-item [routerLink]="['/cup-details', cupToDo.id]">
+                <ion-label>{{ cupToDo.name }}</ion-label>
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab vertical="center" horizontal="center" slot="fixed" *ngIf="currentShufflingCup">
+        <ion-fab-button>
+            <img src="{{ currentShufflingCup.img }}" />
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
+
+<ion-footer>
+    <ion-button (click)="startRandomizer()" expand="block" color="primary" *ngIf="!started">
+        Randomiser
+    </ion-button>
+    <ion-button (click)="started = false" expand="block" color="danger" *ngIf="started">
+        Stop
+    </ion-button>
+</ion-footer>

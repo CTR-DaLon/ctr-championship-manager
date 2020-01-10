@@ -7,14 +7,17 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>
-          <ion-label [routerLink]="['/home']">Mes Championnats</ion-label>
+        <ion-item [routerLink]="['/home']">
+          <ion-label>Mes Championnats</ion-label>
         </ion-item>
         <ion-item>
           <ion-label>Mes Stats</ion-label>
         </ion-item>
-        <ion-item>
-          <ion-label [routerLink]="['/cups-list']">Les Coupes</ion-label>
+        <ion-item [routerLink]="['/cups-list']">
+          <ion-label>Les Coupes</ion-label>
+        </ion-item>
+        <ion-item [routerLink]="['/cup-generator']">
+          <ion-label>Générateur de rencontre</ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
