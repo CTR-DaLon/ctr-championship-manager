@@ -5,6 +5,9 @@ vscode:
     - johnpapa.Angular2@8.2.0:71cwhvciDfgwVNiG3yCydw==
     - johnpapa.angular-essentials@0.6.3:kn6MdE8GXp3Nplq14ISQWg==
     - esbenp.prettier-vscode@3.17.0:dkmQZhBq1JK+eQr3dU7I5g==
+    - ziyasal.vscode-open-in-github@1.3.6:gW2aTXlw4lzURZ7ups8yDQ==
+    - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
+    - donjayamanne.githistory@0.4.13:BULO61FQv6Ie/05ZHCYakQ==
 tasks:
   - init: npm i -g ionic prettier && npm i
     command: ionic serve

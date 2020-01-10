@@ -8,7 +8,7 @@ import { ChampionshipsService } from 'src/app/services/championships.service';
   styleUrls: ['./championships.page.scss']
 })
 export class ChampionshipsPage implements OnInit {
-  private championships: Observable<Championship[]>;
+  championships: Observable<Championship[]>;
 
   constructor(private championshipsService: ChampionshipsService) {}
 
